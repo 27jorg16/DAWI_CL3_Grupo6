@@ -1,3 +1,5 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <div class="card">
     <div class="card-header">
       Formulario Menor Número
@@ -21,7 +23,9 @@
       </div>
     </div>
     <hr />
-    <button type="button" (click)="calcularMenorNumero()" class="btn btn-primary">Calcular Menor Número</button>
+    <button type="button" (click)="calcularMenorNumero()"class="btn btn-primary btn-lg btn3d"><span class=""></span> Calcular</button>
+        
+   
     <div class="mt-3">
       @if (menorNumero !== null) {
         <p>El menor número es: {{ menorNumero }}</p>
