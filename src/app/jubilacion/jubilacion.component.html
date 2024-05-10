@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-header">
+      Formulario Jubilación
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="txtnombre">Ingrese Nombre</label>
+            <input type="text" class="form-control" 
+            [(ngModel)]="jubilacion.nombre"
+            id="txtnombre" placeholder="Ingrese Nombre">
+      </div>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="txtedad">Ingrese Edad</label>
+        <input type="number" class="form-control" 
+        [(ngModel)]="jubilacion.edad" 
+        id="txtedad" placeholder="Ingrese Edad">
+      </div>
+      <div class="mb-3">
+        <label for="txtsexo">Seleccione Sexo</label>
+        <select class="form-control" 
+        [(ngModel)]="jubilacion.sexo" id="txtsexo">
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+        </select>
+      </div>
+    </div>
+    <hr />
+    <button type="button" (click)="calcularJubilacion()"
+    class="btn btn-primary">Calcular</button>
+    @if (mostrarResultado) {
+      <div class="alert alert-primary" role="alert">
+          Su edad es: {{jubilacion.edad}} años, usted {{jubilacion.puedeJubilarse}}
+      </div>
+  }
+  <hr />
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Edad</th>
+          <th scope="col">sexo</th>
+          <th scope="col">puede Jubilarse</th>
+        </tr>
+      </thead>
+      <tbody>
+          @for (jubilado of jubilados; track $index) {
+              <tr>
+                  <td>{{jubilado.nombre}}</td>
+                  <td>{{jubilado.edad}}</td>
+                  <td>{{jubilado.sexo}}</td>
+                  <td>{{jubilado.puedeJubilarse}}</td>
+                </tr>     
+          }              
+      </tbody>
+    </table>
+</div>
