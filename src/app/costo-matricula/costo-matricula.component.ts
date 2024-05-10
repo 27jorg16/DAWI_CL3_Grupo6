@@ -9,4 +9,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './costo-matricula.component.css'
 })
 export class CostoMatriculaComponent { 
+
+  
+  matricula = {
+    nombre:"",
+    numMaterias: 0,
+    costoTotal: 0 
+    };
+ 
+  matriculas: Matricula[] = [];
+
+  calcularCostoTotal() {
+    
 }
+
+
