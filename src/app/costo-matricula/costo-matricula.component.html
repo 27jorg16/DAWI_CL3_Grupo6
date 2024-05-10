@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="mt-4 mb-4">Matrícula Escolar</h1>
+
+  <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+              <label for="nombreAlumno">Nombre del Alumno:</label>
+              <input type="text" class="form-control" [(ngModel)]="nombreAlumno" id="nombreAlumno" placeholder="Ingrese Nombre">
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-6">
+          <h2>Materias Disponibles</h2>
+          <div *ngFor="let materiaItem of materia" class="form-check">
+              <input type="checkbox" class="form-check-input" [checked]="materiasSeleccionadas.includes(materiaItem.nombre)" (change)="onCheckboxChange(materiaItem.nombre, $event)" [id]="materiaItem.nombre">
+              <label class="form-check-label" for="{{ materiaItem.nombre }}">{{ materiaItem.nombre }}</label>
+          </div>
+      </div>
+  </div>
+
+  <div class="row mt-4">
+      <div class="col-md-6">
+          <h2>Resumen de Matrícula</h2>
+          <p>Nombre del Alumno: {{ nombreAlumno }}</p>
+          <p>Materias Seleccionadas: {{ materiasSeleccionadas ? materiasSeleccionadas.join(', ') : 'Ninguna' }}</p>
+          <p>Costo Total: S/. {{ costoTotal }}</p>
+          <p *ngIf="descuentoAplicado">Descuento Aplicado: S/. {{ descuento }}</p>
+          <p>Costo a Pagar: S/. {{ costoAPagar }}</p>
+      </div>
+  </div>
+</div>
