@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class JubilacionComponent {
   jubilacion = {
+    nombre: "",
     edad: 0,
     sexo: "",
     puedeJubilarse: ""
@@ -20,6 +21,7 @@ export class JubilacionComponent {
   calcularJubilacion() {
     this.jubilacion.puedeJubilarse = this.puedeJubilarse(this.jubilacion.edad);
     this.jubilados.push({
+      nombre: this.jubilacion.nombre,
       edad: this.jubilacion.edad,
       sexo: this.jubilacion.sexo,
       puedeJubilarse: this.jubilacion.puedeJubilarse
@@ -41,6 +43,7 @@ export class JubilacionComponent {
 }
 
 interface Jubilado {
+  nombre: string;
   edad: number;
   sexo: string;
   puedeJubilarse: string;

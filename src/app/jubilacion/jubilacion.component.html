@@ -3,10 +3,18 @@
       Formulario Jubilación
     </div>
     <div class="card-body">
+        <div class="mb-3">
+            <label for="txtnombre">Ingrese Nombre</label>
+            <input type="text" class="form-control" 
+            [(ngModel)]="jubilacion.nombre"
+            id="txtnombre" placeholder="Ingrese Nombre">
+      </div>
+    <div class="card-body">
       <div class="mb-3">
         <label for="txtedad">Ingrese Edad</label>
         <input type="number" class="form-control" 
-        [(ngModel)]="jubilacion.edad" id="txtedad" placeholder="Ingrese Edad">
+        [(ngModel)]="jubilacion.edad" 
+        id="txtedad" placeholder="Ingrese Edad">
       </div>
       <div class="mb-3">
         <label for="txtsexo">Seleccione Sexo</label>
@@ -29,6 +37,7 @@
   <table class="table">
       <thead>
         <tr>
+          <th scope="col">Nombre</th>
           <th scope="col">Edad</th>
           <th scope="col">sexo</th>
           <th scope="col">puede Jubilarse</th>
@@ -37,6 +46,7 @@
       <tbody>
           @for (jubilado of jubilados; track $index) {
               <tr>
+                  <td>{{jubilado.nombre}}</td>
                   <td>{{jubilado.edad}}</td>
                   <td>{{jubilado.sexo}}</td>
                   <td>{{jubilado.puedeJubilarse}}</td>
