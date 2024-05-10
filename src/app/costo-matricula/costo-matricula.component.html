@@ -20,7 +20,10 @@
     <hr />
     <button type="button" (click)="calcularCostoTotal()"
     class="btn btn-primary">Calcular</button>
-   
+    @if (this.matricula.costoTotal) {
+      <div class="alert alert-primary" role="alert">
+        {{matricula.nombre}} Su Numero de materias es: {{matricula.numMaterias}} y su monto a pagar es de {{matricula.costoTotal}}
+      </div>
   }
   <hr />
   </div>
