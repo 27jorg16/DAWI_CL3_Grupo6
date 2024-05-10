@@ -9,20 +9,39 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './jubilacion.component.css'
 })
 export class JubilacionComponent {
-  jubilado = {
+  jubilacion = {
     edad: 0,
     sexo: "",
     puedeJubilarse: ""
+  };
+  mostrarResultado = false;
+  jubilados: Jubilado[] = [];
+
+  calcularJubilacion() {
+    this.jubilacion.puedeJubilarse = this.puedeJubilarse(this.jubilacion.edad);
+    this.jubilados.push({
+      edad: this.jubilacion.edad,
+      sexo: this.jubilacion.sexo,
+      puedeJubilarse: this.jubilacion.puedeJubilarse
+    });
+    this.mostrarResultado = true;
   }
-  
-  verificarJubilacion() {
-    if (this.jubilado.sexo === 'Hombre') {
-      this.jubilado.puedeJubilarse = this.jubilado.edad >= 60 ? "¡Puede jubilarse!" : "Aún no puede jubilarse.";
-    } else if (this.jubilado.sexo === 'Mujer') {
-      this.jubilado.puedeJubilarse = this.jubilado.edad >= 54 ? "¡Puede jubilarse!" : "Aún no puede jubilarse.";
+
+  puedeJubilarse(edad: number): string {
+    let resultado = "";
+    if (this.jubilacion.sexo === 'Hombre') {
+      resultado = edad >= 60 ? "¡Puede jubilarse!" : "Aún no puede jubilarse.";
+    } else if (this.jubilacion.sexo === 'Mujer') {
+      resultado = edad >= 54 ? "¡Puede jubilarse!" : "Aún no puede jubilarse.";
     } else {
-      this.jubilado.puedeJubilarse = "No se puede determinar.";
+      resultado = "No se puede determinar.";
     }
-  }
-  
+    return resultado;
+}
+}
+
+interface Jubilado {
+  edad: number;
+  sexo: string;
+  puedeJubilarse: string;
 }
