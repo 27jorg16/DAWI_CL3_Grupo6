@@ -22,5 +22,11 @@ export class CostoMatriculaComponent {
   calcularCostoTotal() {
     
 }
+  interface Matricula {
+  nombre: String;
+  numMaterias: number;
+  costoTotal: number | null;
+
+}
 
 
