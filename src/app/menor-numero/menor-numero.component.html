@@ -1,0 +1,21 @@
+<h2>Calcular el menor número</h2>
+<div>
+  <label for="numero1">Número 1:</label>
+  <input type="number" id="numero1" [(ngModel)]="numeros[0]">
+</div>
+<div>
+  <label for="numero2">Número 2:</label>
+  <input type="number" id="numero2" [(ngModel)]="numeros[1]">
+</div>
+<div>
+  <label for="numero3">Número 3:</label>
+  <input type="number" id="numero3" [(ngModel)]="numeros[2]">
+</div>
+<div>
+  <label for="numero4">Número 4:</label>
+  <input type="number" id="numero4" [(ngModel)]="numeros[3]">
+</div>
+<button (click)="calcularMenor()">Calcular Menor</button>
+<div *ngIf="menor !== undefined">
+  <p>El menor número es: {{ menor }}</p>
+</div>
