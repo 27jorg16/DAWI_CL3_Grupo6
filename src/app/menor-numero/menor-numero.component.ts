@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-menor-numero',
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './menor-numero.component.html',
-  styleUrls: ['./menor-numero.component.css']
+  styleUrl: './menor-numero.component.css'
 })
 export class MenorNumeroComponent {
-  numeros: number[] = [];
-  menor: number | undefined;
+  numeros: number[] = [0, 0, 0, 0];
+  menorNumero: number = Number.MAX_VALUE;
 
-  calcularMenor() {
-    if (this.numeros.length === 4) {
-      this.menor = Math.min(...this.numeros);
-    } else {
-      this.menor = undefined; // Reinicia el valor si no se ingresaron 4 números
+  calcularMenorNumero() {
+    this.menorNumero = Number.MAX_VALUE;
+
+    for (let numero of this.numeros) {
+      if (numero < this.menorNumero) {
+        this.menorNumero = numero;
+      }
     }
   }
 }
