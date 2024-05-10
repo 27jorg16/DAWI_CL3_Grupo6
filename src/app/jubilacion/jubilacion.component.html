@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header text-bg-info">
       Formulario Jubilación
     </div>
     <div class="card-body">
@@ -27,7 +27,7 @@
     </div>
     <hr />
     <button type="button" (click)="calcularJubilacion()"
-    class="btn btn-primary">Calcular</button>
+    class="btn btn-outline-primary">Calcular</button>
     @if (mostrarResultado) {
       <div class="alert alert-primary" role="alert">
           Su edad es: {{jubilacion.edad}} años, usted {{jubilacion.puedeJubilarse}}
