@@ -1,0 +1,21 @@
+<div>
+    <h2>Cálculos de números</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Cuadrado</th>
+          <th>Mitad</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (resultado of resultados; track $index) {
+            <tr>
+                <td>{{resultado.numero}}</td>
+                <td>{{resultado.Cuadrado}}</td>
+                <td>{{resultado.Mitad}}</td>
+              </tr>     
+        }    
+      </tbody>
+    </table>
+  </div>
