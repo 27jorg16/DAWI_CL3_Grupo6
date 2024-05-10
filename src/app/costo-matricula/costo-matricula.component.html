@@ -1,1 +1,26 @@
-<p>costo-matricula works!</p>
+<div class="card">
+    <div class="card-header">
+      Formulario Costo Matricula
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="txtnombre">Ingrese Nombre</label>
+            <input type="text" class="form-control" 
+            [(ngModel)]="matricula.nombre"
+            id="txtnombre" placeholder="Ingrese Nombre">
+      </div>
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="txtedad">Ingrese Cantidad de Materias</label>
+        <input type="number" class="form-control" 
+        [(ngModel)]="matricula.numMaterias" 
+        id="txtedad" placeholder="Ingrese Cantidad de Materias">
+      </div>
+    </div>
+    <hr />
+    <button type="button" (click)="calcularCostoTotal()"
+    class="btn btn-primary">Calcular</button>
+   
+  }
+  <hr />
+  </div>
