@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Calculadora</h1>
+
+  <div class="row">
+    <div class="col">
+      <h2>Números</h2>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let numero of numeros">{{ numero }}</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h2>Operaciones</h2>
+      <div class="form-group">
+        <label for="numeroSeleccionado">Número:</label>
+        <select id="numeroSeleccionado" class="form-control" [(ngModel)]="numeroSeleccionado">
+          <option *ngFor="let numero of numeros" [value]="numero">{{ numero }}</option>
+        </select>
+      </div>
+      <hr />
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="calcular('cuadrado')">Calcular Cuadrado</button>
+        <button type="button" class="btn btn-primary" (click)="calcular('mitad')">Calcular Mitad</button>
+      </div>
+      <hr />
+      <div class="resultados">
+        <p *ngIf="resultadoCuadrado">Cuadrado: {{ resultadoCuadrado }}</p>
+        <p *ngIf="resultadoMitad">Mitad: {{ resultadoMitad }}</p>
+      </div>
+    </div>
+  </div>
+</div>
